@@ -1,0 +1,252 @@
+:root {
+  --gradient-top: hsl(236, 72%, 79%);
+  --gradient-bottom: hsl(237, 63%, 64%);
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  background-image: url("./images/bg-top.svg"), url("./images/bg-bottom.svg");
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
+  background-color: var(--very-light-grayish-blue);
+  background-size: 30%;
+  margin: 0 auto;
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+.header h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--grayish-blue);
+  margin-bottom: 40px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  color: var(--light-grayish-blue);
+  font-size: 0.875rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    hsla(236, 72%, 79%, 1) 0%,
+    hsla(237, 63%, 64%, 1) 77%
+  );
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.slider:hover {
+  opacity: 0.5;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.price-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.info-container {
+  padding: 30px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.info-container h2 {
+  font-size: 1.125rem;
+  color: var(--grayish-blue);
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.price {
+  font-size: 4rem;
+  width: 250px;
+  padding: 0 30px;
+  color: var(--dark-grayish-blue);
+  margin-bottom: 40px;
+  display: block;
+}
+
+.year {
+  display: none;
+}
+
+.year.active {
+  display: block;
+}
+
+.month {
+  display: none;
+}
+
+.month.active {
+  display: block;
+}
+
+.info-container ul {
+  margin-bottom: 40px;
+}
+
+.info-container ul li {
+  color: var(--grayish-blue);
+  border-top: 1px solid rgba(109, 112, 141, 0.25);
+  padding: 20px 0;
+}
+
+.info-container ul li:last-child {
+  border-bottom: 1px solid rgba(109, 112, 141, 0.25);
+}
+
+button {
+  padding: 15px 30px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    hsla(236, 72%, 79%, 1) 0%,
+    hsla(237, 63%, 64%, 1) 77%
+  );
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 0.8;
+  transition: 0.4s;
+}
+
+button:hover {
+  background: white;
+  color: hsla(237, 63%, 64%, 1);
+  border-color: hsla(237, 63%, 64%, 1);
+}
+
+.basic {
+  border-radius: 12px 0 0 12px;
+}
+
+.master {
+  border-radius: 0 12px 12px 0;
+}
+
+.professional {
+  padding: 50px 30px 50px 30px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    hsla(236, 72%, 79%, 1) 0%,
+    hsla(237, 63%, 64%, 1) 77%
+  );
+}
+
+.professional h2,
+.professional .price,
+.professional ul li {
+  color: white;
+}
+
+.professional ul li,
+.professional ul li:last-child {
+  border-color: white;
+}
+
+.professional button {
+  background: white;
+  color: hsla(237, 63%, 64%, 1);
+  border-color: transparent;
+}
+
+.professional button:hover {
+  background: linear-gradient(
+    135deg,
+    hsla(236, 72%, 79%, 1) 0%,
+    hsla(237, 63%, 64%, 1) 77%
+  );
+  color: white;
+  border-color: white;
+}
+
+@media (max-width: 1020px) {
+  .container {
+    padding: 20px 0px;
+  }
+  .price-info {
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+  }
+  .professional {
+    padding: 30px;
+  }
+  .master,
+  .basic {
+    border-radius: 12px;
+  }
+  .info-container {
+    padding: 15px;
+  }
+}
