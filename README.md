@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/gguilhermelopes/front-end-mentor-pricing-component-with-toggle)
+- Live Site URL: [Live URL](https://your-live-site-url.com)
 
 ## My process
 
